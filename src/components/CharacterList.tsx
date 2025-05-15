@@ -28,6 +28,7 @@ export default function CharacterList({ setSelectedCharacter, section, selectedC
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {characters.map((character) => (
           <CharacterCard
+            key={character.id}
             setSelectedCharacter={setSelectedCharacter}
             selectedCharacter={selectedCharacter}
             character={character}
