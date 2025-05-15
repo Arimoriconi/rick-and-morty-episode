@@ -6,6 +6,7 @@ import EpisodeList from "@/components/EpisodeList";
 import { Episode, Character } from "@/types/interface";
 import { loadCharacterEpisodes } from "@/utils/episodeUtils";
 import { loadSharedEpisodes } from "@/utils/episodeUtils";
+import Image from 'next/image';
 
 export default function HomePage() {
   const [selectedCharacter1, setSelectedCharacter1] = useState<Character | null>(null);
@@ -30,7 +31,7 @@ export default function HomePage() {
   return (
     <main className="bg-[url('/noche-estrellada.jpeg')]">
       <div className="max-w-7xl mx-auto space-y-12">
-      <img className="justify-self-center mb-0" src="/Title.webp" alt="Rick&Morty" width={500} />
+      <Image className="justify-self-center mb-0" src="/Title.webp" alt="Rick&Morty" height={500} width={500} />
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
           <CharacterList setSelectedCharacter={setSelectedCharacter1} section="Character #1" selectedCharacter={selectedCharacter1} />
           <CharacterList setSelectedCharacter={setSelectedCharacter2} section="Character #2" selectedCharacter={selectedCharacter2} />

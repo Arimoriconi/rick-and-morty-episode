@@ -28,3 +28,9 @@ export interface Episode {
     url: string;
     created: string;
 }
+
+export interface PaginationProps {
+    page: number;
+    setPage: (page: number) => void;
+    totalPages: number;
+  }

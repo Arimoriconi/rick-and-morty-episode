@@ -1,13 +1,4 @@
-import { useEffect, useState } from "react";
-import CharacterCard from "./CharacterCard";
-import { Character } from "@/types/interface";
-import { fetchCharacters } from "@/lib/api";
-
-interface PaginationProps {
-  page: number;
-  setPage: (page: number) => void;
-  totalPages: number;
-}
+import { PaginationProps } from "@/types/interface";
 
 export default function Pagination({ page, setPage, totalPages }: PaginationProps) {
 
