@@ -29,7 +29,7 @@ export default function HomePage() {
   
 
   return (
-    <main className="bg-[url('/noche-estrellada.jpeg')]">
+    <main>
       <div className="max-w-7xl mx-auto space-y-12">
       <Image className="justify-self-center mb-0" src="/Title.webp" alt="Rick&Morty" height={500} width={500} />
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
