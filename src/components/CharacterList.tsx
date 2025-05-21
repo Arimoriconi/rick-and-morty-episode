@@ -3,6 +3,7 @@ import CharacterCard from "./CharacterCard";
 import { Character } from "@/types/interface";
 import { fetchCharacters } from "@/lib/api";
 import Pagination from "./Pagination";
+import Loader from "./Loader";
 
 interface CharacterListProps {
   setSelectedCharacter: (character: Character) => void;
@@ -14,13 +15,22 @@ export default function CharacterList({ setSelectedCharacter, section, selectedC
   const [characters, setCharacters] = useState<Character[]>([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchCharacters(page).then((data) => {
+    const fetchData = async () => {
+      setLoading(true);
+      const data = await fetchCharacters(page);
       setCharacters(data.results);
       setTotalPages(data.info.pages);
-    });
+      setLoading(false);
+    };
+  
+    fetchData();
   }, [page]);
+  
+
+  if (loading) return <Loader />;
 
   return (
     <div className="space-y-6">
